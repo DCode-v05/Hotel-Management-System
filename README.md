@@ -50,7 +50,7 @@ The Hotel Management System is a comprehensive web application designed to strea
 ### Installation
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/TensoRag/Hotel-Management-System.git
+   git clone https://github.com/DCode-v05/Hotel-Management-System.git
    cd Hotel-Management-System
    ```
 2. **Install dependencies:**
@@ -137,5 +137,5 @@ Contributions are welcome! To contribute:
 ---
 
 ## Contact
-- **GitHub:** [TensoRag](https://github.com/TensoRag)
+- **GitHub:** [DCode-v05](https://github.com/DCode-v05)
 - **Email:** denistanb05@gmail.com
