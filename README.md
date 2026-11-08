@@ -67,4 +67,4 @@ static/              CSS, JS, favicon
 
 ## Notes
 
-`SECRET_KEY` is hardcoded in `app.py` and the Mongo URI is fixed to localhost, so move both to environment variables before deploying anywhere. `admin.py` seeds a default password that should be changed.
+`SECRET_KEY` comes from the `SECRET_KEY` environment variable. If it is unset, a random key is generated at startup, so sessions reset on every restart. The Mongo URI is fixed to localhost, so move it to an environment variable before deploying anywhere. `admin.py` seeds a default password that should be changed.

@@ -7,6 +7,8 @@ import pandas as pd
 import numpy as np
 import pickle
 import random
+import os
+import secrets
 from datetime import datetime,timedelta
 
 from bson import ObjectId
@@ -14,7 +16,7 @@ from bson import ObjectId
 
 app = Flask(__name__)
 CORS(app)
-app.config['SECRET_KEY'] = '5f8c3b1a9d7e4f2c6a0b8e1d3c7f9a4e'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or secrets.token_hex(32)
 app.config['MONGO_URI'] = 'mongodb://localhost:27017/hotel_management'
 mongo = PyMongo(app)
 
