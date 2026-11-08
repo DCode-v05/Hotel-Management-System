@@ -1,6 +1,6 @@
 function openPaymentModal(roomNumber, pricePerDay) {
     console.log("openPaymentModal triggered for room:", roomNumber);
-    console.log("openPaymentModal triggered for prize:", pricePerDay); // Debugging
+    console.log("openPaymentModal triggered for prize:", pricePerDay);
 
     const modal = document.getElementById("payment-modal");
     const totalPriceElement = document.getElementById("total-price");
@@ -33,20 +33,17 @@ function openPaymentModal(roomNumber, pricePerDay) {
     }
 
     totalPriceElement.innerText = (days * pricePerDay).toFixed(2);
-    modal.style.display = "flex"; // Use 'flex' instead of 'block' to work with CSS
+    modal.style.display = "flex";
 }
 
-// Close modal
 function closePaymentModal() {
     document.getElementById("payment-modal").style.display = "none";
 }
 
-// Dummy function for online payment
 function confirmOnlinePayment() {
     alert("Online payment is currently unavailable.");
 }
 
-// Confirm Cash on Delivery
 function confirmCashPayment() {
     alert("Booking confirmed with Cash on Delivery!");
     document.querySelector(".booking-form").submit();

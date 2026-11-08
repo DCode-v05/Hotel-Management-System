@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-<!-- Hero Section -->
 <div class="hero-section text-center py-5 mb-5" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center; background-size: cover;width: 100%; height: 500px; display: flex; align-items: center; justify-content: center; color: white; margin-top: -1.5rem; margin-bottom: 3rem !important;">
     <div class="container">
         {% if 'user_id' in session %}
@@ -14,7 +13,6 @@
     </div>
 </div>
 
-<!-- Features Section -->
 <div class="container">
     <div class="row mb-5">
         <div class="col-md-4 mb-4">
@@ -46,7 +44,6 @@
         </div>  
     </div>
 
-    <!-- Room Types Section -->
     <h2 class="text-center mb-4 animate__animated animate__fadeIn">Our Luxurious Rooms</h2>
     <div class="row mb-5">
         <div class="col-md-6 mb-4">
@@ -55,7 +52,6 @@
                 <div class="card-body">
                     <h4 class="card-title">AC Single-Bed Room</h4>
                     <p class="card-text">Luxurious rooms with modern amenities and comfortable furnishings.</p>
-                    <!-- <a href="{{ url_for('booking') }}" class="btn btn-primary">Book Now</a> -->
                 </div>
             </div>
         </div>
@@ -65,13 +61,11 @@
                 <div class="card-body">
                     <h4 class="card-title">AC Double-Bed Room</h4>
                     <p class="card-text">Comfortable rooms with natural ventilation and all essential amenities.</p>
-                    <!-- <a href="{{ url_for('booking') }}" class="btn btn-primary">Book Now</a> -->
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Testimonials Section -->
     <h2 class="text-center mb-4 animate__animated animate__fadeIn">What Our Guests Say</h2>
     <div class="row mb-5">
         <div class="col-md-4 mb-4">
@@ -104,13 +98,12 @@
     </div>
 </div>
 
-<!-- Custom Styles -->
 <style>
     :root {
         margin-top: 80px;
-        --primary-color: #2D3047; /* Navy */
-        --secondary-color: #FF6B6B; /* Coral */
-        --accent-color: #FFE66D; /* Gold */
+        --primary-color: #2D3047;
+        --secondary-color: #FF6B6B;
+        --accent-color: #FFE66D;
     }
 
     .hero-section {
@@ -172,10 +165,8 @@
     }
 </style>
 
-<!-- Animate.css -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-<!-- Script for Animations -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const elements = document.querySelectorAll('.animate__animated');
@@ -198,7 +189,6 @@
 
 
     });
-
 
 
     if (window.history && window.history.pushState) {

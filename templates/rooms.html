@@ -155,7 +155,7 @@
         }
 
         .booking-form {
-            display: none; /* Hide form by default */
+            display: none;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             padding: 1.5rem;
@@ -168,8 +168,8 @@
     padding: 10px 20px;
     width: 100%;
     text-align: center;
-    word-wrap: break-word; /* Ensures long text wraps properly */
-    white-space: normal; /* Ensures line breaks within text */
+    word-wrap: break-word;
+    white-space: normal;
 }
 
 
@@ -180,7 +180,7 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    display: none; /* Initially hidden */
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 9999;
@@ -314,15 +314,14 @@
 
 <script>
     function showBookingForm(roomNumber) {
-        console.log("showBookingForm triggered for room:", roomNumber);  // Debugging log
+        console.log("showBookingForm triggered for room:", roomNumber);
         const form = document.getElementById(`booking-form-${roomNumber}`);
         if (!form) {
             console.log(`Form with id booking-form-${roomNumber} not found!`);
             return;
         }
-        console.log("Form element found:", form); // Check if form element is found
+        console.log("Form element found:", form);
         
-        // Toggle form visibility
         form.style.display = form.style.display === 'none' ? 'block' : 'none';
         form.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
@@ -335,9 +334,8 @@
 
     function setMinDate() {
         const today = new Date();
-        const todayFormatted = today.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+        const todayFormatted = today.toISOString().split('T')[0];
     
-        // Set minimum check-in date to today
         document.querySelectorAll("input[name='check_in']").forEach(input => {
             input.setAttribute('min', todayFormatted);
             input.addEventListener("change", function () {
@@ -345,11 +343,10 @@
             });
         });
     
-        // Function to update the min check-out date dynamically
         function updateCheckOutMinDate(checkInInput) {
             const checkInDate = new Date(checkInInput.value);
             const minCheckOutDate = new Date(checkInDate);
-            minCheckOutDate.setDate(minCheckOutDate.getDate() + 1); // Check-out must be AFTER check-in
+            minCheckOutDate.setDate(minCheckOutDate.getDate() + 1);
             const minCheckOutFormatted = minCheckOutDate.toISOString().split('T')[0];
     
             const checkOutInput = checkInInput.closest(".booking-form").querySelector("input[name='check_out']");
@@ -358,7 +355,6 @@
             }
         }
     
-        // Add form validation for check-out date
         document.querySelectorAll('.booking-form').forEach(form => {
             form.addEventListener('submit', function(event) {
                 const checkInInput = form.querySelector("input[name='check_in']");
@@ -373,7 +369,6 @@
                     return;
                 }
     
-                // Ensure check-out date is on or after check-in date
                 if (checkOutDate < checkInDate) {
                     event.preventDefault();
                     alert("Check-out date cannot be before check-in date.");
@@ -383,7 +378,6 @@
         });
     }
     
-    // Run function on page load
     document.addEventListener("DOMContentLoaded", setMinDate);   
 
 </script>

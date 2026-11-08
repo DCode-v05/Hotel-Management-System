@@ -43,20 +43,16 @@
         function convertDate(event, form) {
             event.preventDefault();
 
-            // Get the selected date
             let dateInput = form.querySelector('input[name="free_date"]').value;
             if (!dateInput) {
                 alert("Please select a date.");
                 return;
             }
 
-            // Convert to ISO format with time (assuming midnight)
             let isoDate = new Date(dateInput + "T00:00:00.000Z").toISOString();
 
-            // Set the hidden field value
             form.querySelector('input[name="free_date_iso"]').value = isoDate;
 
-            // Submit the form
             form.submit();
         }
     </script>

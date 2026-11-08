@@ -64,8 +64,7 @@
     </div>
 </div>
 
-<style>
-    .login-container {
+<style>    .login-container {
         background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         padding: 2rem 0 4rem;
         min-height: 100vh;
@@ -262,7 +261,6 @@
         }
     }
     
-    /* Responsive adjustments */
     @media (max-width: 767px) {
         .login-card {
             border-radius: 20px;
@@ -276,19 +274,16 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Add staggered animation to features
     const features = document.querySelectorAll('.feature');
     features.forEach((feature, index) => {
         feature.style.animationDelay = `${0.3 * (index + 1)}s`;
     });
     
-    // Add animation to form
     const form = document.querySelector('.form-section');
     setTimeout(() => {
         form.classList.add('fade-in');
     }, 500);
 });
-
 
 
     if (window.history && window.history.pushState) {

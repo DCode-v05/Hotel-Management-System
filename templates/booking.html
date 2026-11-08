@@ -1,5 +1,3 @@
-
-
 {% extends "base.html" %}
 
 {% block content %}
@@ -40,12 +38,10 @@
                                 <h2 class="text-center mb-4">Reserve Your Stay</h2>
                                 <form method="POST" action="{{ url_for('booking') }}" class="booking-form">
                                     {% if session['user_id'] %}
-                                    <!-- Display logged-in user information -->
                                     <input type="hidden" name="name" value="{{ session['user_name'] }}">
                                     <input type="hidden" name="email" value="{{ session['user_email'] }}">
                                     <input type="hidden" name="phone" value="{{ session['user_phone'] }}">
                                     {% else %}
-                                    <!-- Guest Information (only shown if not logged in) -->
                                     <div class="mb-4 form-section">
                                         <h4 class="section-title">Guest Information</h4>
                                         <div class="row">
@@ -76,7 +72,6 @@
                                     </div>
                                     {% endif %}
 
-                                    <!-- Room Details -->
                                     <div class="mb-4 form-section">
                                         <h4 class="section-title">Room Details</h4>
                                         <div class="row">
@@ -130,12 +125,10 @@
                                         </div>
                                     </div>
 
-                                    <!-- Room Availability Status -->
                                     <div id="room_availability_status" class="mb-4">
                                         <p class="text-danger" id="availability_message"></p>
                                     </div>
 
-                                    <!-- Complete Your Booking Section with Image -->
                                     <div class="mb-4 form-section complete-booking-section">
                                         <div class="row">
                                             <div class="col-md-4">
@@ -172,8 +165,7 @@
         </div>
     </div>
 </div>
-<style>
-    .booking-container {
+<style>    .booking-container {
         background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         padding: 2rem 0 4rem;
     }
@@ -399,7 +391,6 @@
         }
     }
     
-    /* Responsive adjustments */
     @media (max-width: 767px) {
         .booking-card {
             border-radius: 20px;
@@ -413,13 +404,11 @@
 
 
 <script>
-// Set minimum dates for check-in and check-out
 document.addEventListener('DOMContentLoaded', function() {
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('check_in').min = today;
     document.getElementById('check_out').min = today;
 
-    // Check room availability based on selected room type and date
     document.getElementById('room_type').addEventListener('change', checkRoomAvailability);
     document.getElementById('check_in').addEventListener('change', checkRoomAvailability);
 
@@ -429,7 +418,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!checkInDate || !roomType) return;
 
-        // Fetch the available date for the selected room type from backend
         fetch(`/check_availability/${roomType}/${checkInDate}`)
             .then(response => response.json())
             .then(data => {

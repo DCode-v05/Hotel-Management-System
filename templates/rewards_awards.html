@@ -4,20 +4,6 @@
 <div class="container">
     <h2 class="text-center mt-4">🏆 Rewards & Awards 🎉</h2>
 
-    <!-- {% set room_counts = {} %}
-    {% for booking in new_bookings %}
-        {% set _ = room_counts.update({booking.room_type: room_counts.get(booking.room_type, 0) + 1}) %}
-    {% endfor %}
-
-    {% set ssb_count = room_counts.get('SSB', 0) %}
-    {% set sdb_count = room_counts.get('SDB', 0) %}
-
-    <div class="card p-4 mt-3 border border-warning">
-        <h4>Your Booking Summary:</h4>
-        <p><strong>SSB Bookings:</strong> {{ ssb_count }}</p>
-        <p><strong>SDB Bookings (Last 3 Months):</strong> {{ sdb_count }}</p>
-    </div> -->
-
     <div class="card p-4 mt-3 border border-warning">
         <h4>📜 Your Approved Bookings:</h4>
         {% if new_bookings %}
